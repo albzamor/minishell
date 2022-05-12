@@ -79,11 +79,11 @@ typedef struct s_aux_pointer
 typedef struct s_shell
 {
 	char 			*line;
+	int				size_line;
 	char			*command;
 	char			*command_flag;
 	char			**command_args;
 	char			**command_plus_args;
-	int				size_line;
 	char			*line_walker;
 	int				size_com_args;
 	char			**list_commands;
