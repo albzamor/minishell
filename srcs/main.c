@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antonmar <antonmar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: albzamor <albzamor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 17:11:21 by antonmar          #+#    #+#             */
-/*   Updated: 2022/09/04 16:19:43 by antonmar         ###   ########.fr       */
+/*   Updated: 2022/09/10 11:25:23 by albzamor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,14 @@
 
 int	g_interactive = 0;
 
+/* A function that is called at the end of the program to check for memory leaks. */
 void leaks()
 {
 	system("leaks minishell");
 }
 
+/* This function is the main function of the program. It is the one that is called every time the user
+enters a new command. */
 void	shell_execution(t_shell *shell)
 {
 	shell->minishell_envp = create_env_matrix(shell);
@@ -35,6 +38,7 @@ void	shell_execution(t_shell *shell)
 			child_execution(shell, shell->minishell_envp);
 	}
 	free_all_struct(shell, shell->minishell_envp);
+	/* Freeing the memory allocated for the environment variables. */
 	free_matrix(shell->minishell_envp);
 	free(shell->minishell_envp);
 	//leaks();

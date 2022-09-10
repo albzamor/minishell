@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   04b_evaluate_syntax_2.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antonmar <antonmar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: albzamor <albzamor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 16:35:29 by albzamor          #+#    #+#             */
-/*   Updated: 2022/09/04 14:28:31 by antonmar         ###   ########.fr       */
+/*   Updated: 2022/09/10 11:25:23 by albzamor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	check_empty(t_shell *shell)
 	return (0);
 }
 
+/* Checking the syntax of the command line. */
 int	check_syntax(t_shell *shell)
 {
 	if (check_empty(shell))

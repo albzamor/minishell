@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   00_init.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antonmar <antonmar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: albzamor <albzamor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 16:33:27 by antonmar          #+#    #+#             */
-/*   Updated: 2022/09/04 16:07:42 by antonmar         ###   ########.fr       */
+/*   Updated: 2022/09/10 11:25:23 by albzamor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@ t_path	*init_path(t_shell *shell)
 	return (shell->path);
 }
 
+/**
+ * It initializes the list of commands.
+ * 
+ * @param shell the shell structure
+ */
 void	init_list_command(t_shell *shell)
 {
 	shell->size_c = 9;
@@ -34,6 +39,7 @@ void	init_list_command(t_shell *shell)
 	shell->list_commands[8] = "echo";
 }
 
+/* Initializing the shell structure. */
 t_shell	*initialice(char **envp)
 {
 	t_shell	*shell;
@@ -53,6 +59,7 @@ t_shell	*initialice(char **envp)
 	return (shell);
 }
 
+/* Creating a new node for the linked list. */
 t_env_list	*env_var_list_new(char *env_var)
 {
 	t_env_list	*env_list;
@@ -66,6 +73,7 @@ t_env_list	*env_var_list_new(char *env_var)
 	return (env_list);
 }
 
+/* Counting the number of nodes in the linked list. */
 int	ft_lst_env_size(t_env_list *lst)
 
 {

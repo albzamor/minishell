@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   03_search_dollar.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antonmar <antonmar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: albzamor <albzamor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 20:28:58 by albzamor          #+#    #+#             */
-/*   Updated: 2022/09/04 15:30:53 by antonmar         ###   ########.fr       */
+/*   Updated: 2022/09/10 11:25:23 by albzamor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
 
+/* Replacing the content of the variable. */
 void	replace_content_runaway(t_aux_p *p)
 {
 	p->line_predolar = ft_substr(p->org_line_arg, 0, p->size_predollar);
@@ -31,6 +32,7 @@ void	replace_content_runaway(t_aux_p *p)
 	p->new_expanded = ft_strjoin(p->line_predolar_joined, p->content);
 }
 
+/* A function that is called when the dollar is not followed by a variable. */
 void	nocontent_runaway(t_aux_p *p)
 {
 	p->line_predolar = ft_substr(p->org_line_arg, 0, p->size_predollar);
@@ -47,7 +49,6 @@ void	nocontent_runaway(t_aux_p *p)
 	p->line_walker += p->size_arg;
 }
 
-/* change dollar to content */
 char	*change_dollars(t_shell *shell, char *str_to_change_dollar)
 {
 	shell->aux_p->org_line_arg = str_to_change_dollar;

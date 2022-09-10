@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   02_search_quotes.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antonmar <antonmar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: albzamor <albzamor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 19:13:39 by antonmar          #+#    #+#             */
-/*   Updated: 2022/09/04 16:16:01 by antonmar         ###   ########.fr       */
+/*   Updated: 2022/09/10 11:25:23 by albzamor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ int	check_list_flag(char *list_arg)
 	return (0);
 }
 
-void	add_line_command(t_shell *shell)
+void	/* Adding the command to the shell. */
+add_line_command(t_shell *shell)
 {
 	t_arglist	*aux_free;
 
@@ -66,6 +67,7 @@ int	add_arg_tolist(t_shell *shell)
 	}
 	if (argument)
 	{
+		/* Looking for the dollar sign and quotes in the argument. */
 		argument = find_dollar_quotes(argument);
 		argument = arg_creator(shell, &argument);
 		if (argument && *argument == '|')
@@ -81,6 +83,7 @@ int	add_arg_tolist(t_shell *shell)
 	return (1);
 }
 
+/* Creating an array of strings with the arguments of the command. */
 void	create_array_args(t_shell *shell)
 {
 	t_arglist	*holder_first;
@@ -103,6 +106,7 @@ void	create_array_args(t_shell *shell)
 	shell->command_plus_args = begin_matrix;
 }
 
+/* Splitting the arguments of the command. */
 int	split_arguments(t_shell *shell)
 {
 	int			i;
