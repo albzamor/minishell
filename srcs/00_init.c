@@ -6,7 +6,11 @@
 /*   By: albzamor <albzamor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 16:33:27 by antonmar          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2022/09/10 11:25:23 by albzamor         ###   ########.fr       */
+=======
+/*   Updated: 2022/08/30 18:10:47 by albzamor         ###   ########.fr       */
+>>>>>>> c697262eec52e2049e1a71d5fd510ed4bf1fd253
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +77,10 @@ t_env_list	*env_var_list_new(char *env_var)
 	return (env_list);
 }
 
+<<<<<<< HEAD
 /* Counting the number of nodes in the linked list. */
+=======
+>>>>>>> c697262eec52e2049e1a71d5fd510ed4bf1fd253
 int	ft_lst_env_size(t_env_list *lst)
 
 {

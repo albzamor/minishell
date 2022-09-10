@@ -6,7 +6,11 @@
 /*   By: antonmar <antonmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 19:05:22 by albzamor          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2022/08/30 23:08:05 by antonmar         ###   ########.fr       */
+=======
+/*   Updated: 2022/08/29 21:29:00 by albzamor         ###   ########.fr       */
+>>>>>>> c697262eec52e2049e1a71d5fd510ed4bf1fd253
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +84,11 @@ char	**create_env_matrix(t_shell *shell)
 	aux_envp = NULL;
 	holder_first = shell->env_list;
 	minishell_envp = malloc (sizeof(char *)
+<<<<<<< HEAD
 			* (ft_lst_env_size(shell->env_list) + 1));
+=======
+			* (ft_lst_env_size(shell->env_list)) + 1);
+>>>>>>> c697262eec52e2049e1a71d5fd510ed4bf1fd253
 	while (holder_first)
 	{
 		aux_envp = ft_strjoin(holder_first->var_name, "=");

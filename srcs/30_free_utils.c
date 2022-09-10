@@ -3,10 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   30_free_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antonmar <antonmar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: albzamor <albzamor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 11:02:23 by albzamor          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2022/09/04 16:14:19 by antonmar         ###   ########.fr       */
+=======
+/*   Updated: 2022/08/29 21:29:14 by albzamor         ###   ########.fr       */
+>>>>>>> c697262eec52e2049e1a71d5fd510ed4bf1fd253
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +33,14 @@ void	free_matrix(char **array)
 		array_aux = array_walker;
 		new_free(array_aux);
 		array_walker++;
+<<<<<<< HEAD
 	}
 	if (array)
 	{
 		new_free(array);
 		new_free(array_walker);
+=======
+>>>>>>> c697262eec52e2049e1a71d5fd510ed4bf1fd253
 	}
 }
 
