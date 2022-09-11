@@ -6,7 +6,7 @@
 /*   By: albzamor <albzamor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 16:38:47 by albzamor          #+#    #+#             */
-/*   Updated: 2022/09/10 15:35:34 by antonmar         ###   ########.fr       */
+/*   Updated: 2022/09/11 13:47:25 by albzamor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,6 +134,8 @@ int			env(t_shell *shell);
 int			unset(t_shell *shell);
 
 /*----------------------- init_env ------------------------------------------*/
+
+int	mod_SHLVL_env(t_shell *shell);
 t_env_list	*env_var_list_new(char *env_var);
 void		env_var_add_back(t_env_list **env_list, t_env_list *new);
 t_env_list	*init_list_env(t_shell *shell, char **envp);

@@ -6,7 +6,7 @@
 /*   By: albzamor <albzamor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 15:52:46 by albzamor          #+#    #+#             */
-/*   Updated: 2022/09/04 16:14:07 by antonmar         ###   ########.fr       */
+/*   Updated: 2022/09/11 13:36:51 by albzamor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,11 +71,13 @@ int	change_var_content(t_shell *shell, char *var_name_to_find,
 {
 	t_env_list	*copy;
 
+	printf("var_name_to_find %s\n", var_name_to_find );
 	copy = shell->env_list_plus;
 	while (copy->next)
 	{
 		if (!ft_strcmp(copy->var_name, var_name_to_find))
 		{
+			printf("var_name_to_list %s\n", copy->var_name );
 			new_free(&copy->var_content);
 			copy->var_content = var_content_to_change;
 			return (1);

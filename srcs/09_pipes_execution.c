@@ -6,11 +6,24 @@
 /*   By: albzamor <albzamor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 11:11:52 by albzamor          #+#    #+#             */
-/*   Updated: 2022/09/11 10:43:19 by antonmar         ###   ########.fr       */
+/*   Updated: 2022/09/11 13:50:16 by albzamor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/minishell.h"
+
+int	mod_SHLVL_env(t_shell *shell)
+{
+	char	*var_name;
+	char	*var_content;
+	char	**tofree;
+	var_name = ft_strdup("SHLVL");
+	var_content = ft_strdup("42");
+	varname_found(&var_name, &var_content, &tofree, shell);
+	return (0);
+
+
+}
 
 int	execute_child_line(t_shell *shell, char **envp)
 {
@@ -43,12 +56,12 @@ int	execute_child_line(t_shell *shell, char **envp)
 	}
 	split_arguments(shell);
 	if (!find_command(shell))
-	{
 		if (!system_commmand(shell, envp)/*  || !shell->command */)
 			command_error(shell, shell->command);
-	}
 	exit (shell->exit_return);
 }
+
+
 
 int	execute_first(t_shell *shell, char **envp, int is_first)
 {

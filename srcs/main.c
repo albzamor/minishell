@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: antonmar <antonmar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: albzamor <albzamor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 17:11:21 by antonmar          #+#    #+#             */
-/*   Updated: 2022/09/10 13:28:56 by antonmar         ###   ########.fr       */
+/*   Updated: 2022/09/11 13:51:37 by albzamor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ void leaks()
 
 void	shell_execution(t_shell *shell)
 {
-	
+	if(ft_strcmp(shell->command, "minishell") == 0) //no tenemo comando todavía
+		mod_SHLVL_env(shell);
 	shell->minishell_envp = create_env_matrix(shell);
 	shell->env_list_plus->next->var_content = ft_itoa(errno);
 	ft_new_line(shell);
