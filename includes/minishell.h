@@ -6,7 +6,7 @@
 /*   By: albzamor <albzamor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 16:38:47 by albzamor          #+#    #+#             */
-/*   Updated: 2022/09/24 15:36:53 by albzamor         ###   ########.fr       */
+/*   Updated: 2022/09/24 20:43:57 by albzamor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,7 @@ typedef struct s_shell
 	int				exit;
 	int				exit_return;
 	int				has_pipes;
+	int				no_enviro;
 	t_path			*path;
 	t_arglist		*arg_list;
 	char			*free_aux_list;

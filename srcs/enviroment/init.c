@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   00_init.c                                          :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: albzamor <albzamor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 16:33:27 by antonmar          #+#    #+#             */
-/*   Updated: 2022/09/24 13:19:33 by albzamor         ###   ########.fr       */
+/*   Updated: 2022/09/24 20:59:02 by albzamor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,17 @@ t_shell	*initialice(char **envp)
 	(void)envp;
 	shell = malloc(sizeof(t_shell));
 	ft_memset(shell, 0, sizeof(t_shell));
-	shell->path = malloc(sizeof(t_path));
-	ft_memset(shell->path, 0, sizeof(t_path));
-	shell->path = init_path(shell);
+	if(envp[3])
+	{
+		shell->path = malloc(sizeof(t_path));
+		ft_memset(shell->path, 0, sizeof(t_path));
+		shell->path = init_path(shell);
+	}
 	shell->aux_p = malloc(sizeof(t_aux_p));
 	ft_memset(shell->aux_p, 0, sizeof(t_aux_p));
+	shell->env_list = malloc(sizeof(t_env_list));	
 	shell->env_list = init_list_env(shell, envp);
+	exit(0);
 	init_list_command(shell);
 	shell->pipes_struct = malloc(sizeof(t_pipes));
 	ft_memset(shell->pipes_struct, 0, sizeof(t_pipes));
