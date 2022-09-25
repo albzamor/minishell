@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   30_free_utils.c                                    :+:      :+:    :+:   */
+/*   free_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: albzamor <albzamor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 11:02:23 by albzamor          #+#    #+#             */
-/*   Updated: 2022/09/24 13:19:38 by albzamor         ###   ########.fr       */
+/*   Updated: 2022/09/25 00:49:14 by albzamor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	free_all_struct(t_shell *shell, char **envp)
 		new_free(&shell->pipes_struct->heardoc_lines);
 	shell->line = NULL;
 	shell->has_pipes = 0;
-	new_free(&shell->env_list_plus->next->var_content);
+	//new_free(&shell->env_list_plus->next->var_content);
 	free_parent(shell);
 	shell->command_args = shell->command_plus_args;
 	free_matrix(shell->command_plus_args);
@@ -58,8 +58,8 @@ void	free_parent(t_shell *shell)
 {
 	free_arg_list(&shell->arg_list);
 	shell->size_com_args = 0;
-	if (shell->command)
-		new_free(&shell->command);
+	/* if (shell->command)
+		new_free(&shell->command); */
 	if (shell->command_flag)
 	{
 		new_free(&shell->free_aux_list);

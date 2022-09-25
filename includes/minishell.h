@@ -6,7 +6,7 @@
 /*   By: albzamor <albzamor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 16:38:47 by albzamor          #+#    #+#             */
-/*   Updated: 2022/09/24 20:43:57 by albzamor         ###   ########.fr       */
+/*   Updated: 2022/09/24 23:26:26 by albzamor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,6 +161,7 @@ int			system_commmand(t_shell *shell, char **envp);
 void		execute_command(t_shell *shell, int i);
 char		**create_env_matrix(t_shell *shell);
 int			find_enviro_command(t_shell *shell);
+void		init_list_command(t_shell *shell);
 
 /*--------------------PARSING AND SYNTAX--------------------------------------*/
 int			check_syntax(t_shell *shell);

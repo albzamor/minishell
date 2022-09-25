@@ -6,7 +6,7 @@
 /*   By: albzamor <albzamor@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 18:17:21 by albzamor          #+#    #+#             */
-/*   Updated: 2022/09/24 20:54:46 by albzamor         ###   ########.fr       */
+/*   Updated: 2022/09/25 02:00:45 by albzamor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,28 +66,43 @@ t_env_list	*add_hidden_env_var(t_shell *shell)
 	init = mount_hidden_env_var(shell, hidden_name, hidden_content);
 	free(hidden_name);
 	free(hidden_content);
+	print_env_list(init);
+	printf("fadafadf\n");//borrar
 	return (init);
 }
 
 t_env_list	*init_list_env(t_shell *shell, char **envp)
 {
-	t_env_list	*init;
+	//t_env_list	*init;
 	t_env_list	*this_list_var;
 	int			size_envp;
 	int			i;
+	t_env_list	*start_init_env = NULL;
 
 	size_envp = size_matriz(envp);
+	printf("holaaaaaa\n");
+	printf("size envp %i\n", size_envp);
+	//shell->env_list_plus = malloc (sizeof(t_env_list));//no habioa malloc 
 	shell->env_list_plus = add_hidden_env_var(shell);
+	
+
 	this_list_var = env_var_list_new(envp[0]);
-	env_var_add_back(&shell->env_list->next->next, this_list_var);
-	init = this_list_var;
-	i = 1;
+	env_var_add_back(&shell->env_list_plus, this_list_var);
+	//init = this_list_var;
+	i = 0;//ojo estaba a 1;
 	while (++i < size_envp)
 	{
 		this_list_var = env_var_list_new(envp[i]);
-		env_var_add_back(&shell->env_list->next->next, this_list_var);
+		env_var_add_back(&shell->env_list_plus, this_list_var);
 	}
-	return (init);
+	start_init_env = shell->env_list_plus ->next->next->next;
+	printf("start\n");
+	print_env_list(start_init_env);
+	printf("fin\n");
+	shell->env_list = start_init_env;
+	print_env_list(shell->env_list_plus);
+	sleep(8);
+	return (shell->env_list);
 }
 
 void	env_var_add_back(t_env_list **env_list, t_env_list *new)
